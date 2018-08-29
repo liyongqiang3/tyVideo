@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TYBaseTabBarController : UITabBarController
+@interface TYBaseTabBarController : UITabBarController<UITabBarControllerDelegate>
+- (UIImage *)makeSelectImage:(NSString *)imgName;
+
+- (UINavigationController *)makeNav:(UIViewController *)vc;
+
+- (void)initHighlightViewWithTabCount:(NSInteger)count;
+- (void)setHighlightIndex:(NSInteger)index number:(NSInteger)number;
+- (void)hideHighlightView;
 
 @end

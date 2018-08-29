@@ -6,8 +6,8 @@
 //  Copyright © 2018 yongqiang li. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TYBaseTabBarController.h"
 
-@interface YTTabBarController : UITabBarController
+@interface YTTabBarController : TYBaseTabBarController
 
 @end

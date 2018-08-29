@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FC24426E6962F6783107DA3 /* libPods-tyVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 634331AA7E2B31AAFAC54F7C /* libPods-tyVideo.a */; };
+		D029F743212FA25B00E28AF3 /* TYBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F742212FA25B00E28AF3 /* TYBaseTabBarController.m */; };
+		D029F74A212FA4F100E28AF3 /* TYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F749212FA4F100E28AF3 /* TYHomeViewController.m */; };
+		D029F750212FA55C00E28AF3 /* TYLoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F74F212FA55C00E28AF3 /* TYLoveViewController.m */; };
+		D029F753212FA5AD00E28AF3 /* TYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F752212FA5AD00E28AF3 /* TYMineViewController.m */; };
+		D029F756212FA5E100E28AF3 /* TYQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F755212FA5E100E28AF3 /* TYQuestionViewController.m */; };
+		D029F75D212FAA0B00E28AF3 /* UIImage+ColorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F75A212FAA0B00E28AF3 /* UIImage+ColorFactory.m */; };
+		D029F75E212FAA0B00E28AF3 /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F75C212FAA0B00E28AF3 /* UIView+Gesture.m */; };
+		D0362E1721343A1B00C17E98 /* YTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0362E1621343A1B00C17E98 /* YTTabBarController.m */; };
 		D0E8995D212EF76300EFD861 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8995C212EF76300EFD861 /* AppDelegate.m */; };
 		D0E89960212EF76300EFD861 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8995F212EF76300EFD861 /* ViewController.m */; };
 		D0E89963212EF76300EFD861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E89961212EF76300EFD861 /* Main.storyboard */; };
@@ -16,6 +25,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		634331AA7E2B31AAFAC54F7C /* libPods-tyVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tyVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D029F741212FA25B00E28AF3 /* TYBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBaseTabBarController.h; sourceTree = "<group>"; };
+		D029F742212FA25B00E28AF3 /* TYBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBaseTabBarController.m; sourceTree = "<group>"; };
+		D029F748212FA4F100E28AF3 /* TYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYHomeViewController.h; sourceTree = "<group>"; };
+		D029F749212FA4F100E28AF3 /* TYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYHomeViewController.m; sourceTree = "<group>"; };
+		D029F74E212FA55C00E28AF3 /* TYLoveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYLoveViewController.h; sourceTree = "<group>"; };
+		D029F74F212FA55C00E28AF3 /* TYLoveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYLoveViewController.m; sourceTree = "<group>"; };
+		D029F751212FA5AD00E28AF3 /* TYMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYMineViewController.h; sourceTree = "<group>"; };
+		D029F752212FA5AD00E28AF3 /* TYMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYMineViewController.m; sourceTree = "<group>"; };
+		D029F754212FA5E100E28AF3 /* TYQuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYQuestionViewController.h; sourceTree = "<group>"; };
+		D029F755212FA5E100E28AF3 /* TYQuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYQuestionViewController.m; sourceTree = "<group>"; };
+		D029F757212FA79B00E28AF3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D029F759212FAA0B00E28AF3 /* UIImage+ColorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorFactory.h"; sourceTree = "<group>"; };
+		D029F75A212FAA0B00E28AF3 /* UIImage+ColorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorFactory.m"; sourceTree = "<group>"; };
+		D029F75B212FAA0B00E28AF3 /* UIView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gesture.h"; sourceTree = "<group>"; };
+		D029F75C212FAA0B00E28AF3 /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
+		D0362E1521343A1B00C17E98 /* YTTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTTabBarController.h; sourceTree = "<group>"; };
+		D0362E1621343A1B00C17E98 /* YTTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTTabBarController.m; sourceTree = "<group>"; };
 		D0E89958212EF76300EFD861 /* tyVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E8995B212EF76300EFD861 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0E8995C212EF76300EFD861 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +53,8 @@
 		D0E89967212EF76400EFD861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0E89969212EF76400EFD861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0E8996A212EF76400EFD861 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5B216C34E0FBC93394C092C /* Pods-tyVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tyVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-tyVideo/Pods-tyVideo.release.xcconfig"; sourceTree = "<group>"; };
+		DE54D38A70CCFDDCA69EC6CC /* Pods-tyVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tyVideo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tyVideo/Pods-tyVideo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +62,95 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FC24426E6962F6783107DA3 /* libPods-tyVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06EA37E940B091B4E7E536E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				634331AA7E2B31AAFAC54F7C /* libPods-tyVideo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48292746C58F92BF469C3C60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE54D38A70CCFDDCA69EC6CC /* Pods-tyVideo.debug.xcconfig */,
+				D5B216C34E0FBC93394C092C /* Pods-tyVideo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D029F740212FA1ED00E28AF3 /* baseTabar */ = {
+			isa = PBXGroup;
+			children = (
+				D029F741212FA25B00E28AF3 /* TYBaseTabBarController.h */,
+				D029F742212FA25B00E28AF3 /* TYBaseTabBarController.m */,
+				D0362E1521343A1B00C17E98 /* YTTabBarController.h */,
+				D0362E1621343A1B00C17E98 /* YTTabBarController.m */,
+			);
+			path = baseTabar;
+			sourceTree = "<group>";
+		};
+		D029F744212FA39D00E28AF3 /* love */ = {
+			isa = PBXGroup;
+			children = (
+				D029F74E212FA55C00E28AF3 /* TYLoveViewController.h */,
+				D029F74F212FA55C00E28AF3 /* TYLoveViewController.m */,
+			);
+			path = love;
+			sourceTree = "<group>";
+		};
+		D029F745212FA39D00E28AF3 /* questions */ = {
+			isa = PBXGroup;
+			children = (
+				D029F754212FA5E100E28AF3 /* TYQuestionViewController.h */,
+				D029F755212FA5E100E28AF3 /* TYQuestionViewController.m */,
+			);
+			path = questions;
+			sourceTree = "<group>";
+		};
+		D029F746212FA39D00E28AF3 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				D029F748212FA4F100E28AF3 /* TYHomeViewController.h */,
+				D029F749212FA4F100E28AF3 /* TYHomeViewController.m */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		D029F747212FA39D00E28AF3 /* me */ = {
+			isa = PBXGroup;
+			children = (
+				D029F751212FA5AD00E28AF3 /* TYMineViewController.h */,
+				D029F752212FA5AD00E28AF3 /* TYMineViewController.m */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		D029F758212FAA0B00E28AF3 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				D029F759212FAA0B00E28AF3 /* UIImage+ColorFactory.h */,
+				D029F75A212FAA0B00E28AF3 /* UIImage+ColorFactory.m */,
+				D029F75B212FAA0B00E28AF3 /* UIView+Gesture.h */,
+				D029F75C212FAA0B00E28AF3 /* UIView+Gesture.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
 		D0E8994F212EF76300EFD861 = {
 			isa = PBXGroup;
 			children = (
 				D0E8995A212EF76300EFD861 /* tyVideo */,
 				D0E89959212EF76300EFD861 /* Products */,
+				48292746C58F92BF469C3C60 /* Pods */,
+				06EA37E940B091B4E7E536E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +165,12 @@
 		D0E8995A212EF76300EFD861 /* tyVideo */ = {
 			isa = PBXGroup;
 			children = (
+				D029F758212FAA0B00E28AF3 /* category */,
+				D029F746212FA39D00E28AF3 /* home */,
+				D029F744212FA39D00E28AF3 /* love */,
+				D029F747212FA39D00E28AF3 /* me */,
+				D029F745212FA39D00E28AF3 /* questions */,
+				D029F740212FA1ED00E28AF3 /* baseTabar */,
 				D0E8995B212EF76300EFD861 /* AppDelegate.h */,
 				D0E8995C212EF76300EFD861 /* AppDelegate.m */,
 				D0E8995E212EF76300EFD861 /* ViewController.h */,
@@ -65,6 +178,7 @@
 				D0E89961212EF76300EFD861 /* Main.storyboard */,
 				D0E89964212EF76400EFD861 /* Assets.xcassets */,
 				D0E89966212EF76400EFD861 /* LaunchScreen.storyboard */,
+				D029F757212FA79B00E28AF3 /* PrefixHeader.pch */,
 				D0E89969212EF76400EFD861 /* Info.plist */,
 				D0E8996A212EF76400EFD861 /* main.m */,
 			);
@@ -78,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0E8996E212EF76400EFD861 /* Build configuration list for PBXNativeTarget "tyVideo" */;
 			buildPhases = (
+				5AE7E77B8855C600D6307D81 /* [CP] Check Pods Manifest.lock */,
 				D0E89954212EF76300EFD861 /* Sources */,
 				D0E89955212EF76300EFD861 /* Frameworks */,
 				D0E89956212EF76300EFD861 /* Resources */,
@@ -136,14 +251,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5AE7E77B8855C600D6307D81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tyVideo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0E89954212EF76300EFD861 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D029F75D212FAA0B00E28AF3 /* UIImage+ColorFactory.m in Sources */,
+				D029F74A212FA4F100E28AF3 /* TYHomeViewController.m in Sources */,
+				D029F75E212FAA0B00E28AF3 /* UIView+Gesture.m in Sources */,
+				D029F756212FA5E100E28AF3 /* TYQuestionViewController.m in Sources */,
+				D0362E1721343A1B00C17E98 /* YTTabBarController.m in Sources */,
 				D0E89960212EF76300EFD861 /* ViewController.m in Sources */,
 				D0E8996B212EF76400EFD861 /* main.m in Sources */,
 				D0E8995D212EF76300EFD861 /* AppDelegate.m in Sources */,
+				D029F753212FA5AD00E28AF3 /* TYMineViewController.m in Sources */,
+				D029F743212FA25B00E28AF3 /* TYBaseTabBarController.m in Sources */,
+				D029F750212FA55C00E28AF3 /* TYLoveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +429,12 @@
 		};
 		D0E8996F212EF76400EFD861 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE54D38A70CCFDDCA69EC6CC /* Pods-tyVideo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/tyVideo/PrefixHeader.pch";
 				INFOPLIST_FILE = tyVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +448,12 @@
 		};
 		D0E89970212EF76400EFD861 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5B216C34E0FBC93394C092C /* Pods-tyVideo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/tyVideo/PrefixHeader.pch";
 				INFOPLIST_FILE = tyVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
