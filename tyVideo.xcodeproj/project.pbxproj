@@ -18,6 +18,7 @@
 		D0362E1721343A1B00C17E98 /* YTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0362E1621343A1B00C17E98 /* YTTabBarController.m */; };
 		D03F3186213E35FC00E08DE4 /* TYPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03F3185213E35FC00E08DE4 /* TYPlayerCell.m */; };
 		D03F3189213E362300E08DE4 /* TYPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03F3188213E362300E08DE4 /* TYPlayerView.m */; };
+		D03F318B213E97D200E08DE4 /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D03F318A213E97D200E08DE4 /* test2.mp4 */; };
 		D0E8995D212EF76300EFD861 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8995C212EF76300EFD861 /* AppDelegate.m */; };
 		D0E89960212EF76300EFD861 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8995F212EF76300EFD861 /* ViewController.m */; };
 		D0E89963212EF76300EFD861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E89961212EF76300EFD861 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		D03F3185213E35FC00E08DE4 /* TYPlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYPlayerCell.m; sourceTree = "<group>"; };
 		D03F3187213E362300E08DE4 /* TYPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYPlayerView.h; sourceTree = "<group>"; };
 		D03F3188213E362300E08DE4 /* TYPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYPlayerView.m; sourceTree = "<group>"; };
+		D03F318A213E97D200E08DE4 /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 		D0E89958212EF76300EFD861 /* tyVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E8995B212EF76300EFD861 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0E8995C212EF76300EFD861 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		D0E8995A212EF76300EFD861 /* tyVideo */ = {
 			isa = PBXGroup;
 			children = (
+				D03F318A213E97D200E08DE4 /* test2.mp4 */,
 				D0F1E1D5213E2D9F00CC4332 /* player */,
 				D029F758212FAA0B00E28AF3 /* category */,
 				D029F746212FA39D00E28AF3 /* home */,
@@ -263,6 +266,7 @@
 			files = (
 				D0E89968212EF76400EFD861 /* LaunchScreen.storyboard in Resources */,
 				D0E89965212EF76400EFD861 /* Assets.xcassets in Resources */,
+				D03F318B213E97D200E08DE4 /* test2.mp4 in Resources */,
 				D0E89963212EF76300EFD861 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
