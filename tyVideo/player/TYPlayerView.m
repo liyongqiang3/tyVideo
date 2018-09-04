@@ -63,9 +63,10 @@
         self.playerItem = [AVPlayerItem playerItemWithURL:url];
     } else {
         //构建播放网址
-        NSURL *mediaURL = [NSURL URLWithString:@"http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"];
+        NSURL *videoUrl = [[NSBundle mainBundle]URLForResource:@"test2" withExtension:@"mp4"];
+//        NSURL *mediaURL = [NSURL URLWithString:@"http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"];
         //构建播放单元
-        self.playerItem = [AVPlayerItem playerItemWithURL:mediaURL];
+        self.playerItem = [AVPlayerItem playerItemWithURL:videoUrl];
     }
     [self avPlayerMethod];
 }
