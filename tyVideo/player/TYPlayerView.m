@@ -19,6 +19,8 @@
 @property (strong, nonatomic)AVPlayerLayer *playerLayer;//播放界面（layer）
 @property (strong, nonatomic)UISlider *avSlider;//用来现实视频的播放进度，并且通过它来控制视频的快进快退。
 @property (assign, nonatomic)BOOL isReadToPlay;//
+@property (strong, nonatomic)UIButton *playButton;//
+
 
 @end
 
@@ -29,6 +31,7 @@
     self = [super initWithFrame:frame];
     if (self) {
 //        [self avPlayerMethod];
+        self.backgroundColor = TYColorWhite;
     }
     return self;
 }
@@ -40,6 +43,19 @@
     }
     return _myPlayer;
 }
+
+- (UIButton *)playButton
+{
+    if (!_playButton) {
+        _playButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+        _playButton.backgroundColor = [UIColor redColor];
+        [_playButton setTitle:@"按钮" forState:UIControlStateNormal];
+        [_playButton addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_playButton];
+    }
+    return _playButton;
+}
+
 - (void)curPlayerUrl:(NSURL *)url
 {
     if (url) {
@@ -47,7 +63,7 @@
         self.playerItem = [AVPlayerItem playerItemWithURL:url];
     } else {
         //构建播放网址
-        NSURL *mediaURL = [NSURL URLWithString:@"http://baobab.wdjcdn.com/1455782903700jy.mp4"];
+        NSURL *mediaURL = [NSURL URLWithString:@"http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"];
         //构建播放单元
         self.playerItem = [AVPlayerItem playerItemWithURL:mediaURL];
     }
@@ -57,17 +73,24 @@
 -(void)avPlayerMethod
 {
     //构建播放网址
-    NSURL *mediaURL = [NSURL URLWithString:@"http://baobab.wdjcdn.com/1455782903700jy.mp4"];
-    //构建播放单元
-    self.playerItem = [AVPlayerItem playerItemWithURL:mediaURL];
+//    NSURL *mediaURL = [NSURL URLWithString:@"http://baobab.wdjcdn.com/1455782903700jy.mp4"];
+//    //构建播放单元
+//    self.playerItem = [AVPlayerItem playerItemWithURL:mediaURL];
     //构建播放器对象
     //构建播放器的layer
+    self.myPlayer =  [[AVPlayer alloc] initWithPlayerItem:self.playerItem];
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.myPlayer];
     self.playerLayer.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     [self.layer addSublayer:self.playerLayer];
+    self.playerLayer.backgroundColor = TYColor333.CGColor;
     //通过KVO来观察status属性的变化，来获得播放之前的错误信息
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+//    if (self.playButton) {
+//
+//    }
 }
+
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:
 (NSDictionary<NSString *,id> *)change context:(void *)context{
@@ -93,7 +116,6 @@
         }
     }
     //移除监听（观察者）
-    [object removeObserver:self forKeyPath:@"status"];
 }
 
 - (void)play
@@ -113,11 +135,17 @@
 
 - (void)playAction
 {
-    if ( self.isReadToPlay) {
+//    if ( self.isReadToPlay) {
         [self.myPlayer play];
-    }else{
-        NSLog(@"视频正在加载中");
-    }
+//    }else{
+//        NSLog(@"视频正在加载中");
+//    }
+}
+
+- (void)dealloc
+{
+//    [object removeObserver:self forKeyPath:@"status"];
+
 }
 
 
