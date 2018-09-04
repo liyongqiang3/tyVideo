@@ -7,6 +7,14 @@
 //
 
 #import "TYPlayerCell.h"
+#import "TYPlayerView.h"
+
+@interface TYPlayerCell ()
+
+@property ()
+
+@end
+
 
 @implementation TYPlayerCell
 
