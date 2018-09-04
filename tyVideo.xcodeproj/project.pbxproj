@@ -16,6 +16,8 @@
 		D029F75D212FAA0B00E28AF3 /* UIImage+ColorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F75A212FAA0B00E28AF3 /* UIImage+ColorFactory.m */; };
 		D029F75E212FAA0B00E28AF3 /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = D029F75C212FAA0B00E28AF3 /* UIView+Gesture.m */; };
 		D0362E1721343A1B00C17E98 /* YTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0362E1621343A1B00C17E98 /* YTTabBarController.m */; };
+		D03F3186213E35FC00E08DE4 /* TYPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03F3185213E35FC00E08DE4 /* TYPlayerCell.m */; };
+		D03F3189213E362300E08DE4 /* TYPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D03F3188213E362300E08DE4 /* TYPlayerView.m */; };
 		D0E8995D212EF76300EFD861 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8995C212EF76300EFD861 /* AppDelegate.m */; };
 		D0E89960212EF76300EFD861 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8995F212EF76300EFD861 /* ViewController.m */; };
 		D0E89963212EF76300EFD861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E89961212EF76300EFD861 /* Main.storyboard */; };
@@ -43,6 +45,10 @@
 		D029F75C212FAA0B00E28AF3 /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
 		D0362E1521343A1B00C17E98 /* YTTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTTabBarController.h; sourceTree = "<group>"; };
 		D0362E1621343A1B00C17E98 /* YTTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTTabBarController.m; sourceTree = "<group>"; };
+		D03F3184213E35FC00E08DE4 /* TYPlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYPlayerCell.h; sourceTree = "<group>"; };
+		D03F3185213E35FC00E08DE4 /* TYPlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYPlayerCell.m; sourceTree = "<group>"; };
+		D03F3187213E362300E08DE4 /* TYPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYPlayerView.h; sourceTree = "<group>"; };
+		D03F3188213E362300E08DE4 /* TYPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYPlayerView.m; sourceTree = "<group>"; };
 		D0E89958212EF76300EFD861 /* tyVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tyVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E8995B212EF76300EFD861 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0E8995C212EF76300EFD861 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 			children = (
 				D029F748212FA4F100E28AF3 /* TYHomeViewController.h */,
 				D029F749212FA4F100E28AF3 /* TYHomeViewController.m */,
+				D03F3184213E35FC00E08DE4 /* TYPlayerCell.h */,
+				D03F3185213E35FC00E08DE4 /* TYPlayerCell.m */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 		D0E8995A212EF76300EFD861 /* tyVideo */ = {
 			isa = PBXGroup;
 			children = (
+				D0F1E1D5213E2D9F00CC4332 /* player */,
 				D029F758212FAA0B00E28AF3 /* category */,
 				D029F746212FA39D00E28AF3 /* home */,
 				D029F744212FA39D00E28AF3 /* love */,
@@ -183,6 +192,15 @@
 				D0E8996A212EF76400EFD861 /* main.m */,
 			);
 			path = tyVideo;
+			sourceTree = "<group>";
+		};
+		D0F1E1D5213E2D9F00CC4332 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				D03F3187213E362300E08DE4 /* TYPlayerView.h */,
+				D03F3188213E362300E08DE4 /* TYPlayerView.m */,
+			);
+			path = player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,15 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-tyVideo-checkManifestLockResult.txt",
 			);
@@ -285,10 +299,12 @@
 				D029F74A212FA4F100E28AF3 /* TYHomeViewController.m in Sources */,
 				D029F75E212FAA0B00E28AF3 /* UIView+Gesture.m in Sources */,
 				D029F756212FA5E100E28AF3 /* TYQuestionViewController.m in Sources */,
+				D03F3189213E362300E08DE4 /* TYPlayerView.m in Sources */,
 				D0362E1721343A1B00C17E98 /* YTTabBarController.m in Sources */,
 				D0E89960212EF76300EFD861 /* ViewController.m in Sources */,
 				D0E8996B212EF76400EFD861 /* main.m in Sources */,
 				D0E8995D212EF76300EFD861 /* AppDelegate.m in Sources */,
+				D03F3186213E35FC00E08DE4 /* TYPlayerCell.m in Sources */,
 				D029F753212FA5AD00E28AF3 /* TYMineViewController.m in Sources */,
 				D029F743212FA25B00E28AF3 /* TYBaseTabBarController.m in Sources */,
 				D029F750212FA55C00E28AF3 /* TYLoveViewController.m in Sources */,
