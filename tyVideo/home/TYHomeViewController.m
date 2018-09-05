@@ -12,6 +12,7 @@
 @interface TYHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic) UICollectionView *collectionView;
+@property (nonatomic) NSArray *dataArray;
 
 @end
 
@@ -20,8 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"首页";
+    [self initData];
     self.view.backgroundColor = TYColorWhite;
     [self.view addSubview:self.collectionView];
+}
+
+- (void)initData
+{
+    NSURL *url1 = [[NSBundle mainBundle] URLForResource:@"test2" withExtension:@"mp4"];
+    NSURL *url2 = [NSURL URLWithString:@"https://media.w3.org/2010/05/sintel/trailer.mp4"];
+    self.dataArray = @[url1,url2];
 }
 
 - (UICollectionView *)collectionView
@@ -51,7 +60,9 @@
 {
     TYPlayerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"plalyerCell" forIndexPath:indexPath];
      cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
-    [cell curPlayerUrl:nil];
+    NSURL *url = self.dataArray[indexPath.row % 2];
+    [cell curPlayerUrl:url];
+//    [cell curPlayerUrl:@"http://yun.it7090.com/video/XHLaunchAd/video03.mp4"];
     return cell;
 }
 

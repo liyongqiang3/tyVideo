@@ -13,5 +13,6 @@
 - (void)curPlayerUrl:(NSURL *)url;
 
 - (void)play;
+- (void)pause;
 
 @end

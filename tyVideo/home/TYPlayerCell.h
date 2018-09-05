@@ -10,6 +10,6 @@
 
 @interface TYPlayerCell : UICollectionViewCell
 
-- (void)curPlayerUrl:(NSString *)url;
+- (void)curPlayerUrl:(NSURL *)url;
 
 @end
