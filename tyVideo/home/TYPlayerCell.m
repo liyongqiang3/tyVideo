@@ -28,10 +28,10 @@
     return self;
 }
 
-- (void)curPlayerUrl:(NSString *)url
+- (void)curPlayerUrl:(NSURL *)url
 {
-
-    [self.playerView curPlayerUrl:[NSURL URLWithString:url]];
+            
+    [self.playerView curPlayerUrl:url];
     [self.playerView  play];
 }
 

@@ -14,12 +14,12 @@
 
 @interface TYPlayerView ()
 
-@property (strong, nonatomic)AVPlayer *myPlayer;//播放器
-@property (strong, nonatomic)AVPlayerItem *playerItem;//播放单元
-@property (strong, nonatomic)AVPlayerLayer *playerLayer;//播放界面（layer）
-@property (strong, nonatomic)UISlider *avSlider;//用来现实视频的播放进度，并且通过它来控制视频的快进快退。
-@property (assign, nonatomic)BOOL isReadToPlay;//
-@property (strong, nonatomic)UIButton *playButton;//
+@property (strong, nonatomic) AVPlayer *myPlayer;//播放器
+@property (strong, nonatomic) AVPlayerItem *playerItem;//播放单元
+@property (strong, nonatomic) AVPlayerLayer *playerLayer;//播放界面（layer）
+@property (strong, nonatomic) UISlider *avSlider;//用来现实视频的播放进度，并且通过它来控制视频的快进快退。
+@property (assign, nonatomic) BOOL isReadToPlay;//
+@property (strong, nonatomic) UIButton *playButton;//
 
 
 @end
@@ -32,8 +32,24 @@
     if (self) {
 //        [self avPlayerMethod];
         self.backgroundColor = TYColorWhite;
+        [self addSubview:self.playButton];
+        [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self);
+            make.centerY.equalTo(self);
+            make.height.equalTo(@100);
+            make.width.equalTo(@100);
+        }];
+        [self addNotification];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topPause)];
+        self.userInteractionEnabled = YES;
+        [self addGestureRecognizer:tap];
     }
     return self;
+}
+
+- (void)topPause
+{
+    [self pause];
 }
 
 - (AVPlayer *)myPlayer
@@ -47,11 +63,9 @@
 - (UIButton *)playButton
 {
     if (!_playButton) {
-        _playButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
-        _playButton.backgroundColor = [UIColor redColor];
-        [_playButton setTitle:@"按钮" forState:UIControlStateNormal];
+        _playButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         [_playButton addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_playButton];
     }
     return _playButton;
 }
@@ -73,22 +87,15 @@
 
 -(void)avPlayerMethod
 {
-    //构建播放网址
-//    NSURL *mediaURL = [NSURL URLWithString:@"http://baobab.wdjcdn.com/1455782903700jy.mp4"];
-//    //构建播放单元
-//    self.playerItem = [AVPlayerItem playerItemWithURL:mediaURL];
-    //构建播放器对象
-    //构建播放器的layer
     self.myPlayer =  [[AVPlayer alloc] initWithPlayerItem:self.playerItem];
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.myPlayer];
     self.playerLayer.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     [self.layer addSublayer:self.playerLayer];
-    self.playerLayer.backgroundColor = TYColor333.CGColor;
+    self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     //通过KVO来观察status属性的变化，来获得播放之前的错误信息
     [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-//    if (self.playButton) {
-//
-//    }
+    [self bringSubviewToFront:self.playButton];
+
 }
 
 
@@ -106,7 +113,8 @@
             case AVPlayerItemStatusReadyToPlay:
                 NSLog(@"准好播放了");
                 self.isReadToPlay = YES;
-                self.avSlider.maximumValue = self.playerItem.duration.value / self.playerItem.duration.timescale;
+                [self play];
+
                 break;
             case AVPlayerItemStatusUnknown:
                 NSLog(@"视频资源出现未知错误");
@@ -121,27 +129,37 @@
 
 - (void)play
 {
-    if ( self.isReadToPlay) {
-        [self.myPlayer play];
-    }else{
-        NSLog(@"视频正在加载中");
-    }
+    self.playButton.hidden = YES;
+    [self.myPlayer play];
+  
    
 }
 
 - (void)pause
 {
+    self.playButton.hidden = NO;
     [self.myPlayer pause];
 }
 
 - (void)playAction
 {
-//    if ( self.isReadToPlay) {
-        [self.myPlayer play];
-//    }else{
-//        NSLog(@"视频正在加载中");
-//    }
+    [self.myPlayer seekToTime:kCMTimeZero];
+    [self play];
 }
+
+-(void)addNotification
+{
+    //给AVPlayerItem添加播放完成通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.myPlayer.currentItem];
+}
+
+- (void)playbackFinished:(NSNotification *)notification
+{
+    NSLog(@"notification-----end");
+    self.playButton.hidden = NO;
+
+}
+
 
 - (void)dealloc
 {
