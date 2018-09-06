@@ -7,10 +7,9 @@
 //
 
 #import "TYPlayerView.h"
-#import <AVFoundation/AVPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVPlayerLayer.h>
 #import <AVFoundation/AVPlayerItem.h>
-
 
 @interface TYPlayerView ()
 
@@ -72,6 +71,7 @@
 
 - (void)curPlayerUrl:(NSURL *)url
 {
+    [self removePlayerMethod];
     if (url) {
         //构建播放单元
         self.playerItem = [AVPlayerItem playerItemWithURL:url];
@@ -82,10 +82,10 @@
         //构建播放单元
         self.playerItem = [AVPlayerItem playerItemWithURL:videoUrl];
     }
-    [self avPlayerMethod];
+    [self addAvPlayerMethod];
 }
 
--(void)avPlayerMethod
+-(void)addAvPlayerMethod
 {
     self.myPlayer =  [[AVPlayer alloc] initWithPlayerItem:self.playerItem];
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.myPlayer];
@@ -93,8 +93,26 @@
     [self.layer addSublayer:self.playerLayer];
     self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     //通过KVO来观察status属性的变化，来获得播放之前的错误信息
-    [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     [self bringSubviewToFront:self.playButton];
+    [self addObserveValue];
+
+}
+
+- (void)removePlayerMethod
+{
+    [self removeObserver];
+    [self.playerLayer removeFromSuperlayer];
+    self.playerLayer = nil;
+    self.playerItem = nil;
+    self.myPlayer = nil;
+}
+
+ - (void)addObserveValue
+{
+    [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
+    [self.playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
+    [self.playerItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
 
 }
 
@@ -123,9 +141,35 @@
             default:
                 break;
         }
+    } else if([keyPath isEqualToString:@"loadedTimeRanges"]){
+        // 缓冲时间
+        NSLog(@"缓冲时间");
+        NSTimeInterval timeInterval = [self availableDuration];// 计算缓冲进度
+        CMTime duration = self.playerItem.duration;
+        CGFloat totalDuration = CMTimeGetSeconds(duration);
+        NSLog(@"缓冲进度到 vid:%@ /  %@",@(timeInterval) , @(totalDuration));
+        
+    }else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) {
+        
+        //            IMGLog(@"缓冲playbackBufferEmpty vid:%@",self.vid);
+    }else if([keyPath isEqualToString:@"playbackLikelyToKeepUp"]){
+        //            IMGLog(@"缓冲playbackLikelyToKeepUp vid:%@",self.vid);
     }
-    //移除监听（观察者）
+
 }
+
+- (NSTimeInterval)availableDuration {
+    NSArray *loadedTimeRanges = [[self.myPlayer currentItem] loadedTimeRanges];
+    
+    NSValue *loadedTimeRange = [loadedTimeRanges firstObject];
+    CMTimeRange timeRange = [loadedTimeRange CMTimeRangeValue];// 获取缓冲区域
+    float startSeconds = CMTimeGetSeconds(timeRange.start);
+    float durationSeconds = CMTimeGetSeconds(timeRange.duration);
+    NSTimeInterval result = startSeconds + durationSeconds;// 计算缓冲总进度
+    return result;
+}
+
+
 
 - (void)play
 {
@@ -143,8 +187,12 @@
 
 - (void)playAction
 {
-    [self.myPlayer seekToTime:kCMTimeZero];
-    [self play];
+    
+    NSTimeInterval seeTime =  CMTimeGetSeconds([self.playerItem currentTime]);
+    CMTime seekToTime = CMTimeMake(seeTime * 60, 60);
+
+//    [self.myPlayer seekToTime:seekToTime];
+  [self.myPlayer seekToTime:seekToTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];    [self play];
 }
 
 -(void)addNotification
@@ -163,8 +211,20 @@
 
 - (void)dealloc
 {
-//    [object removeObserver:self forKeyPath:@"status"];
 
+}
+
+- (void) removeObserver {
+//    [self cancelPreviousPerformPlay];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    if (self.playerItem) {
+        [self.playerItem removeObserver:self forKeyPath:@"status"];
+        [self.playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+        [self.playerItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
+        [self.playerItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
+    }
 }
 
 

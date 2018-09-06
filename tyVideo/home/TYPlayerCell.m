@@ -12,6 +12,7 @@
 @interface TYPlayerCell ()
 
 @property (nonatomic) TYPlayerView *playerView;
+@property (nonatomic,copy) NSURL *videoUrl;
 
 @end
 
@@ -30,9 +31,11 @@
 
 - (void)curPlayerUrl:(NSURL *)url
 {
-            
+    if ([self.videoUrl.absoluteString isEqualToString: url.absoluteString]) {
+        return;
+    }
     [self.playerView curPlayerUrl:url];
-    [self.playerView  play];
+//    [self.playerView  play];
 }
 
 @end
